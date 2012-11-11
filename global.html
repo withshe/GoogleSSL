@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        safari.application.addEventListener("beforeNavigate", beforeNavigate, false);
+        
+        function beforeNavigate(event) {
+            var url = event.url, reg = /^http:\/\/([\w-]+\.)*google.com/;
+            if (reg.test(url)) {
+                url = url.replace('http://', 'https://');
+                event.target.url = url;
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
